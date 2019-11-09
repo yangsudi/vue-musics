@@ -1,8 +1,8 @@
 import Mock from 'mockjs'
 
-var data = Mock.mock({
-  'list|1-10': [{
+var MockData = Mock.mock({
+  'list|1-100': [{
     'id|+1': 1
   }]
 })
-export default data
+export default MockData

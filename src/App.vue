@@ -1,13 +1,15 @@
 <template>
   <div id="app">
-    <router-view/>
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
   </div>
 </template>
 
 <style lang="stylus">
-import 'assets/var.styl'
+@import "assets/css/var.styl"
 #app
-  width: 100%
-  height 100%
+  width: 100vw
+  height 100vh
   background: $COLOR-bgC
 </style>

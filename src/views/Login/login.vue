@@ -1,9 +1,10 @@
 <template>
   <div class="login">
-    sdfsd
+    sd
   </div>
 </template>
 <script>
+
 export default {
   name: 'Login',
   data () {
