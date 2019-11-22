@@ -1,4 +1,3 @@
-
 const path = require('path')
 
 // 获取文件相对路径

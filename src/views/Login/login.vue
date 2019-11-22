@@ -6,7 +6,7 @@
         <el-aside width="200px" class="aside">Aside</el-aside>
         <el-container>
           <el-main>
-              适当方式
+            <Scroll></Scroll>
           </el-main>
         </el-container>
       </el-container>
@@ -14,8 +14,12 @@
   </div>
 </template>
 <script>
+import Scroll from 'components/scroll.vue'
 export default {
   name: 'Login',
+  components: {
+    Scroll
+  },
   data () {
     return {
       msg: '1sd'
