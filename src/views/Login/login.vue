@@ -7,6 +7,9 @@
         <el-container>
           <el-main>
             <Scroll></Scroll>
+            <button @click="getChildrenFunction">点我</button>
+            <test-panel ref="panel"></test-panel>
+            <test-toast ref="toast"></test-toast>
           </el-main>
         </el-container>
       </el-container>
@@ -20,9 +23,24 @@ export default {
   components: {
     Scroll
   },
+  created () {
+    console.log('现在调用的api,', this.$msg)
+    console.log(this.$myMethod(this.testArr))
+    this.$nextTick(() => {
+      console.log(this.$refs.panel.$el)
+    })
+  },
   data () {
     return {
-      msg: '1sd'
+      msg: '1sd',
+      testArr: [1, 2, 6]
+    }
+  },
+  methods: {
+    getChildrenFunction () {
+      this.$nextTick(() => {
+        this.$refs.toast.toastPlugin('在父组件触发调用的toast', 2500)
+      })
     }
   }
 }
