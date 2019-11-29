@@ -6,10 +6,10 @@
         <el-aside width="200px" class="aside">Aside</el-aside>
         <el-container>
           <el-main>
-            <Scroll></Scroll>
-            <button @click="getChildrenFunction">点我</button>
-            <test-panel ref="panel"></test-panel>
-            <test-toast ref="toast"></test-toast>
+<!--            <Scroll></Scroll>-->
+<!--            <button @click="getChildrenFunction">点我</button>-->
+<!--            <test-panel ref="panel"></test-panel>-->
+<!--            <test-toast ref="toast"></test-toast>-->
           </el-main>
         </el-container>
       </el-container>
@@ -17,18 +17,23 @@
   </div>
 </template>
 <script>
-import Scroll from 'components/scroll.vue'
+// import Scroll from 'components/scroll.vue'
+import { getRecommend } from '../../api/recommend'
+import { ERR_OK } from '../../api/config'
+
 export default {
   name: 'Login',
   components: {
-    Scroll
+    // Scroll
   },
   created () {
     console.log('现在调用的api,', this.$msg)
     console.log(this.$myMethod(this.testArr))
     this.$nextTick(() => {
-      console.log(this.$refs.panel.$el)
     })
+  },
+  mounted () {
+    // this._getRecommend()
   },
   data () {
     return {
@@ -40,6 +45,13 @@ export default {
     getChildrenFunction () {
       this.$nextTick(() => {
         this.$refs.toast.toastPlugin('在父组件触发调用的toast', 2500)
+      })
+    },
+    _getRecommend () {
+      getRecommend().then((res) => {
+        if (res.code === ERR_OK) {
+          console.log(res.data.slider)
+        }
       })
     }
   }
