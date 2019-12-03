@@ -10,6 +10,7 @@
     "docs:build": "vuepress build docs"
   },
   "dependencies": {
+    "async-validate": "^1.0.1",
     "better-scroll": "^1.15.2",
     "core-js": "^3.3.2",
     "countup.js": "^2.0.4",
